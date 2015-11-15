@@ -276,7 +276,7 @@ function readAndDraw() {
 
         // Set the line back to solid; this is necessary because we have
         // a dashed line for the centerline below
-        context.setLineDash([0, 0]);
+        context.setLineDash([]);
 
         // Same thing for line color
         context.strokeStyle = '#000';
@@ -385,14 +385,14 @@ function readAndDraw() {
         context.stroke();
 
 
-        // // Draw the centerline
-        // context.setLineDash([4, 3]);
+        // Draw the centerline
+        context.setLineDash([4, 3]);
 
-        // context.beginPath();
-        // context.moveTo(originX, originY);
-        // context.lineTo(units(4), originY);
-        // context.strokeStyle = '#bdbdbd';
-        // context.stroke();
+        context.beginPath();
+        context.moveTo(originX, originY);
+        context.lineTo(units(4), originY);
+        context.strokeStyle = '#bdbdbd';
+        context.stroke();
     }
 }
 
