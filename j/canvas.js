@@ -385,14 +385,14 @@ function readAndDraw() {
         context.stroke();
 
 
-        // Draw the centerline
-        context.setLineDash([4, 3]);
+        // // Draw the centerline
+        // context.setLineDash([4, 3]);
 
-        context.beginPath();
-        context.moveTo(originX, originY);
-        context.lineTo(units(4), originY);
-        context.strokeStyle = '#bdbdbd';
-        context.stroke();
+        // context.beginPath();
+        // context.moveTo(originX, originY);
+        // context.lineTo(units(4), originY);
+        // context.strokeStyle = '#bdbdbd';
+        // context.stroke();
     }
 }
 
