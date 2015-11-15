@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <title>Canvas Drawing Example</title>
+  <link rel="stylesheet" type="text/css" href="c/canvas-style.css">
+  <script type="text/javascript" src="j/jquery-2.1.4.min.js"></script>
+<body>
+
+<form>
+  <table>
+    <tr>
+      <td>
+        <label>Shank Dia</label>
+        <select name="shankDia" id="shankDia">
+          <option>.1250</option>
+          <option>.1875</option>
+          <option selected>.2500</option>
+          <option>.3125</option>
+          <option>.3750</option>
+          <option>.5000</option>
+          <option>.6250</option>
+          <option>.7500</option>
+          <option>1.000</option>
+
+
+        </select>
+      </td>
+      <td>
+        <label>Shank Length</label>
+        <input type="text" name="shankLen" id="shankLen" value="1">
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label>Cutting Dia</label>
+        <input type="text" name="cutDia" id="cutDia" value=".0937">
+      </td>
+      <td>
+        <label>Cutting Length</label>
+        <input type="text" name="cutLen" id="cutLen" value=".0937">
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label>Neck Dia</label>
+        <input type="text" name="neckDia" id="neckDia" value=".09">
+      </td>
+      <td>
+        <label>Neck Length</label>
+        <input type="text" name="neckLen" id="neckLen" value=".160">
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label>Taper Length</label>
+        <input type="text" name="taperLen" id="taperLen" value="1.18">
+      </td>
+
+      <td>
+        <label>Taper Angle</label>
+        <input type="text" name="taperAng" id="taperAng" value="1.5">
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label>Radius Size</label>
+        <input type="text" name="radSize" id="radSize" value=".04685">
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <button>Submit</button>
+      </td>
+    </tr>
+
+  </table>
+
+</form>
+
+<div id="messages">
+  <h2>Messages:</h2>
+  <ul id="messages-list">
+
+  </ul>
+</div>
+
+<canvas id="toolDrawing" width="1000">
+Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+<script type="text/javascript" src="j/canvas.js"></script>
+
+</body>
+</html>
