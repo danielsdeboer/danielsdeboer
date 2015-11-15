@@ -7,7 +7,7 @@ function log(variable) {
 function getUnitDivider() {
     // unitDivider sets the scale of the drawing. It is used by units() to
     // divide the width of the canvas into psuedo-units.
-    var unitDivider = 5.5;
+    var unitDivider = 3;
 
     return unitDivider;
 }
