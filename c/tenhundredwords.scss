@@ -1,0 +1,87 @@
+@import 'partial/reset', 'partial/mixin', 'partial/color', 'partial/breakpoint', 'bourbon/bourbon', 'wireframe/wireframe';
+
+@import url(https://fonts.googleapis.com/css?family=Arvo:400);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  @include display(flex);
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(center);
+
+  @include hw(100%, 100%);
+
+  font-family: 'Arvo', serif;
+}
+
+.thw-header {
+  @include wireframe(5%);
+
+  @include display(flex);
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(center);
+
+  @include hw(10vh, 100%);
+
+  h1 {
+    font-size: 300%;
+    text-align: center;
+  }
+}
+
+.thw-container {
+  @include wireframe(5%);
+
+  @include display(flex);
+  @include flex-direction(row);
+  @include align-items(stretch);
+  @include justify-content(center);
+
+  @include hw(80vh, 100vw);
+
+  .input-container,
+  .output-container {
+    @include flex(1);
+    @include display(flex);
+    @include flex-direction(column);
+    @include align-items(stretch);
+    @include justify-content(center);
+
+    @include hw(100%, auto);
+  }
+}
+
+.thw-input,
+.thw-output {
+  @include wireframe(15%);
+
+  @include flex(20);
+
+  font-family: 'Arvo', serif;
+  font-size: 1.2rem;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: .5em .8em;
+}
+
+h2 {
+  @include wireframe(10%);
+
+  @include flex(1);
+
+  font-size: 130%;
+  text-align: center;
+  min-height: 1.9em;
+  padding: .3em 0;
+}
+
+
+
+
+.error {
+  background-color: #FF8A65;
+}
