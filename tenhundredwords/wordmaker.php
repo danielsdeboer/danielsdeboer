@@ -1,8 +1,6 @@
 <?php
 
-include 'wordlist.php';
-
-// var_dump($wordlist);
+$common_words = file('commonwords.txt', FILE_IGNORE_NEW_LINES);
 
 $word_list_extended = file('wordlist.txt', FILE_IGNORE_NEW_LINES);
 
@@ -18,7 +16,7 @@ foreach($word_list_extended as $key => &$words) {
 
     // Check each subarray against the canonical word_list array
     // If it isn't there, discard that index
-    if (!in_array($words[0], $word_list)) {
+    if (!in_array($words[0], $common_words)) {
         unset($word_list_extended[$key]);
     }
 
@@ -44,10 +42,24 @@ foreach($word_list_extended as $word_list) {
     }
 }
 
+// Find any words in the original word list that didn't match the extended word
+// list an add them back in (in case of adjectives, ect)
+foreach($common_words as $common_word) {
+    if(!in_array($common_word, $words)) {
+        $common_word = strtolower($common_word);
+        $common_word =  preg_replace('/[^a-z]+/', '', $common_word);
+        $words[] = $common_word;
+    }
+}
+
+
+
 // Output the array so I can lazily copy and paste it to javascript
-echo '\'';
+// echo '\'';
 foreach($words as $word) {
     echo $word . '\',\'';
 }
+
+
 
 ?>
