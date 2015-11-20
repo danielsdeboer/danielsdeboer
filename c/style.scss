@@ -1,6 +1,6 @@
   // scss-lint:disable DeclarationOrder
 // SASS imports
-@import 'partial/var', 'partial/reset', 'partial/mixin', 'partial/color', 'partial/breakpoint', 'bourbon/bourbon', 'wireframe/wireframe';
+@import 'partial/var', 'partial/reset', 'partial/mixin', 'partial/color', 'partial/breakpoint-main', 'bourbon/bourbon', 'wireframe/wireframe';
 
 // Google Fonts
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,100);
@@ -12,6 +12,12 @@
   box-sizing: border-box;
 }
 
+// Needed for browsers like Chrome mobile to display the background image
+// propely (bg-size: cover);
+html {
+  @include hw(100%, 100%);
+}
+
 // Set the default font of all body children to Lato, falling back on sans-serif
 body {
   @include display(flex);
@@ -19,7 +25,7 @@ body {
   @include align-items(center);
   @include justify-content(center);
 
-  // @include filter(blur(3px));
+  @include hw (100%, 100%);
 
   background: darken($color-container-overlay, 10%) url('../i/background.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -27,36 +33,20 @@ body {
   width: 100%;
 }
 
-.fp-container {
-  // Etc
-  @include hw(calc(100% - 4vh), calc(100% - 4vh));
-  @include tl(0, 0);
-
-  // background: $color-container-overlay url('../i/background.jpg') no-repeat center center fixed;
-  background-size: cover;
-  border-radius: 2vw;
-  position: absolute;
-  margin: 2vh;
-}
-
-.fp-container-cover {
+.fp-container-outer {
   // Flexbox
   @include display(flex);
   @include flex-direction(column);
   @include align-items(center);
   @include justify-content(center);
 
-  // Etc
-  @include hw(100%, 100%);
-  @include tl(0, 0);
+  @include hw(calc(100% - 4vh), calc(100% - 4vh));
 
   background-color: rgba(darken($color-container-overlay, 30%), .7);
-  position: relative;
-  // border-radius: 2vw;
   padding: 2em;
 }
 
-.fp-container-article {
+.fp-container-inner {
   // Flexbox
   @include display(flex);
   @include flex-direction(column);
@@ -79,7 +69,6 @@ body {
   @include align-items(center);
   @include justify-content(center);
 
-  // Etc
   @include hw(auto, 100%);
 
   border: 2px solid white;
@@ -108,25 +97,16 @@ body {
   // Etc
   @include hw(auto, 98%);
 
-  color: $color-font-base;
   background-color: rgba(#fff, .1);
+  color: $color-font-base;
   padding: .7em 2em;
 
   h1 {
-    font-family: $font-hero;
-    font-size: 2.5vw;
-    font-style: italic;
-    font-weight: 300;
-  }
-
-  h2 {
-    font-family: $font-hero;
-    font-size: 1.45vw;
-    font-style: italic;
-    font-weight: 300;
-
+    font: $font-nav;
   }
 }
+
+// font: font-style font-variant font-weight font-size/line-height font-family;
 
 .fp-nav-list {
   // Flexbox
@@ -137,20 +117,9 @@ body {
 
   @include hw(auto, 100%);
 
-  font-family: $font-base;
-  font-size: 2vw;
-  font-weight: 300;
+  font: $font-nav;
   text-align: center;
   text-transform: capitalize;
-
-  // li {
-  //   @include flex(1);
-
-  //   border-right: 1px solid white;
-
-  //   &:last-of-type {
-  //     border-right: 0;
-  //   }
 }
 
 .fp-nav-link {
