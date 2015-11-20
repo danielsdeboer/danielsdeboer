@@ -34,8 +34,11 @@ $font-base: 'Lato', sans-serif;
 $font-hero: 'Josefin Slab', serif;
 $font-info: 'Arvo', serif;
 
-$font-nav: italic 300 200% $font-hero;
+$font-nav: italic 300 2.7vw $font-hero;
+$font-nav-large: italic 300 4vw $font-hero;
 
+$font-hero-bp1: 100 5.5vw $font-hero;
+$font-hero-bp2: 100 4.5vw $font-hero;
 
 // Shapes and whatnot
 $circle-hw: 3rem;

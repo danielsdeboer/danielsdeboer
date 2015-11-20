@@ -43,7 +43,7 @@ body {
   @include hw(calc(100% - 4vh), calc(100% - 4vh));
 
   background-color: rgba(darken($color-container-overlay, 30%), .7);
-  padding: 2em;
+  // padding: 2em;
 }
 
 .fp-container-inner {
@@ -54,7 +54,7 @@ body {
   @include justify-content(center);
 
   @include breakpoint(1) {
-    @include hw(auto, 90%);
+    @include hw(auto, 87%);
   }
 
   @include breakpoint(2) {
@@ -75,9 +75,14 @@ body {
   color: $color-font-base;
 
   h1 {
-    font-family: $font-hero;
-    font-size: 4.5vw;
-    font-weight: 100;
+    @include breakpoint(1) {
+      font: $font-hero-bp1;
+    }
+
+    @include breakpoint(2) {
+      font: $font-hero-bp2;
+    }
+
     letter-spacing: .4em;
     // This margin-right is counteract the letter-spacing adding space
     // after the last character of the h1
@@ -99,10 +104,16 @@ body {
 
   background-color: rgba(#fff, .1);
   color: $color-font-base;
-  padding: .7em 2em;
+  padding: .8em 0;
 
   h1 {
-    font: $font-nav;
+    @include breakpoint(1) {
+      font: $font-nav-large;
+    }
+
+    @include breakpoint(2) {
+      font: $font-nav;
+    }
   }
 }
 
@@ -117,9 +128,16 @@ body {
 
   @include hw(auto, 100%);
 
-  font: $font-nav;
   text-align: center;
   text-transform: capitalize;
+
+  @include breakpoint(1) {
+    font: $font-nav-large;
+  }
+
+  @include breakpoint(2) {
+    font: $font-nav;
+  }
 }
 
 .fp-nav-link {

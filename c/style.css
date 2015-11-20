@@ -114,8 +114,7 @@ body {
   -ms-flex-pack: center;
   height: calc(100% - 4vh);
   width: calc(100% - 4vh);
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 2em; }
+  background-color: rgba(0, 0, 0, 0.7); }
 
 .fp-container-inner {
   display: -webkit-box;
@@ -156,7 +155,7 @@ body {
   @media only screen and (min-width: 0) and (max-width: 600px) {
     .fp-container-inner {
       height: auto;
-      width: 90%; } }
+      width: 87%; } }
   @media only screen and (min-width: 601px) and (max-width: 10000px) {
     .fp-container-inner {
       height: auto;
@@ -203,13 +202,16 @@ body {
   border: 2px solid white;
   color: #fff; }
   .fp-article h1 {
-    font-family: "Josefin Slab", serif;
-    font-size: 4.5vw;
-    font-weight: 100;
     letter-spacing: .4em;
     margin-right: -.4em;
     padding: .4em 0;
     text-transform: uppercase; }
+    @media only screen and (min-width: 0) and (max-width: 600px) {
+      .fp-article h1 {
+        font: 100 5.5vw "Josefin Slab", serif; } }
+    @media only screen and (min-width: 601px) and (max-width: 10000px) {
+      .fp-article h1 {
+        font: 100 4.5vw "Josefin Slab", serif; } }
 
 .fp-nav {
   display: -webkit-box;
@@ -251,9 +253,13 @@ body {
   width: 98%;
   background-color: rgba(255, 255, 255, 0.1);
   color: #fff;
-  padding: .7em 2em; }
-  .fp-nav h1 {
-    font: italic 300 200% "Josefin Slab", serif; }
+  padding: .8em 0; }
+  @media only screen and (min-width: 0) and (max-width: 600px) {
+    .fp-nav h1 {
+      font: italic 300 4vw "Josefin Slab", serif; } }
+  @media only screen and (min-width: 601px) and (max-width: 10000px) {
+    .fp-nav h1 {
+      font: italic 300 2.7vw "Josefin Slab", serif; } }
 
 .fp-nav-list {
   display: -webkit-box;
@@ -293,9 +299,14 @@ body {
   -ms-flex-pack: distribute;
   height: auto;
   width: 100%;
-  font: italic 300 200% "Josefin Slab", serif;
   text-align: center;
   text-transform: capitalize; }
+  @media only screen and (min-width: 0) and (max-width: 600px) {
+    .fp-nav-list {
+      font: italic 300 4vw "Josefin Slab", serif; } }
+  @media only screen and (min-width: 601px) and (max-width: 10000px) {
+    .fp-nav-list {
+      font: italic 300 2.7vw "Josefin Slab", serif; } }
 
 .fp-nav-link:link, .fp-nav-link:visited, .fp-nav-link:active, .fp-nav-link:hover {
   color: #fff;
