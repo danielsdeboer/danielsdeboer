@@ -11,25 +11,36 @@ $(document).ready(function() {
   $('.thw-input').on('keyup', function() {
     var input = $(this).val();
 
-    // Replace all line breaks into <br> tags.
-    input = input.split('\n').join(' <br>');
 
-    // Split the input into an array
-    input = input.split(/\s/gi);
+    // Split the input into an array using a capture group in order
+    // to not actually lose any non-alphabetical information.
+    input = input.split(/([a-z']+)/gi);
 
     // Iterate over each of the array indexes and see if it's
     // in the wordList array. If not, give it a span for styling
     $.each(input, function(index, value) {
-      var test = value.replace(/<br>|\W+|\s|\r/gi, '').toLowerCase();
+      // Get rid of any non-alphabetical characters. Technically this should
+      // only have to remove apostrophes but let's go
+      var test = value.replace(/[^a-z]+/gi, '').toLowerCase();
 
-      if (wordList.indexOf(test) == -1) {
-        input[index] = '<span class="error">' + value + '</span>';
+      // Check if the array value is an alphabetical word
+      if (test.match(/[a-z]+/gi)) {
+
+        // Check the word agains the canonical word list
+        if (wordList.indexOf(test) == -1) {
+          input[index] = '<span class="error">' + value + '</span>';
+        }
       }
     });
 
     // Join the array back into a string, separated by spaces.
     // This might need some tweaking...
-    input = input.join(' ');
+    input = input.join('');
+
+    // Replace all line breaks into <br> tags. The output div won't recognize
+    // linebreaks otherwise. It also won't do things like double spaces, but
+    // that's not a dealbreaker.
+    input = input.split('\n').join(' <br>');
 
     // Plunk the input back into output array
     $('.thw-output').html(input);
