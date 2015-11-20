@@ -303,10 +303,10 @@ body {
   text-transform: capitalize; }
   @media only screen and (min-width: 0) and (max-width: 600px) {
     .fp-nav-list {
-      font: italic 300 4vw "Josefin Slab", serif; } }
+      font: italic 300 3.7vw "Josefin Slab", serif; } }
   @media only screen and (min-width: 601px) and (max-width: 10000px) {
     .fp-nav-list {
-      font: italic 300 2.7vw "Josefin Slab", serif; } }
+      font: italic 300 2.3vw "Josefin Slab", serif; } }
 
 .fp-nav-link:link, .fp-nav-link:visited, .fp-nav-link:active, .fp-nav-link:hover {
   color: #fff;
