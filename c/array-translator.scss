@@ -1,0 +1,76 @@
+  // scss-lint:disable DeclarationOrder
+// SASS imports
+@import 'partial/var', 'partial/reset', 'partial/mixin', 'partial/color', 'partial/breakpoint-main', 'bourbon/bourbon', 'wireframe/wireframe';
+
+// Google Fonts
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,100);
+
+// Make the box model a bit more sensible
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  @include hw(100%, 100%);
+}
+
+body {
+  @include display(flex);
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(center);
+
+  background: $color-white;
+}
+
+h1 {
+  @include wireframe(5%);
+
+  @include hw(auto, 100%);
+
+  font: $font-h1-base;
+  text-align: center;
+}
+
+.container {
+  @include wireframe(5%);
+
+  @include flex(1);
+
+  @include display(flex);
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(center);
+
+  @include hw(auto, 100%);
+
+  padding: 1em;
+}
+
+.input,
+.output {
+  @include wireframe(10%);
+
+  @include flex(1);
+
+  @include display(flex);
+  @include flex-direction(column);
+  @include align-items(center);
+  @include justify-content(center);
+
+  @include hw(auto, 80%);
+
+  textarea {
+    @include flex(1);
+
+    @include hw(auto, 100%);
+
+    padding: .5em;
+  }
+
+  button {
+    margin: .5em 0;
+  }
+}
+
